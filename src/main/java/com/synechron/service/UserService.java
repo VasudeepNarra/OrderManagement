@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserService implements UserDetailsService{
@@ -23,5 +24,20 @@ public class UserService implements UserDetailsService{
         }
         return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getUserPassword(),
                 new ArrayList<>());
+    }
+    public User addUser(User user) {
+        return repository.save(user);
+    }
+
+    public User findByUserId(int userId) {
+        return repository.findById(userId).orElse(null);
+    }
+
+    public List<User> getUsers() {
+        return repository.findAll();
+    }
+
+    public User findByUserName(String userName) {
+        return repository.findByUserName(userName);
     }
 }

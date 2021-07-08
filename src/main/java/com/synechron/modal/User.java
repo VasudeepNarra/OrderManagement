@@ -1,17 +1,18 @@
 package com.synechron.modal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Entity
 @Table(name="USERS_TBL")
 public class User {
@@ -22,4 +23,9 @@ public class User {
     private String userPassword;
     private String email;
     private String phoneNumber;
+    //@JsonIgnore
+   // @OneToMany(mappedBy = "user", cascade={CascadeType.ALL})
+    @OneToMany(targetEntity = Order.class,cascade = CascadeType.ALL)
+    @JoinColumn(name ="userorder_fk",referencedColumnName = "userId")
+    private List<Order> orders;
 }
