@@ -8,11 +8,13 @@ import com.synechron.repository.OrderRepository;
 import com.synechron.repository.UserRepository;
 import com.synechron.service.OrderService;
 import com.synechron.service.UserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Api(value = "Swagger2OrderRestController", description = "This REST Api related to Welcome Message!!!!")
 @RestController
 public class OrderController {
 

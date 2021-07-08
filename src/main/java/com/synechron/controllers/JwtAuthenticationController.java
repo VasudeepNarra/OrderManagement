@@ -2,11 +2,13 @@ package com.synechron.controllers;
 
 import com.synechron.modal.AuthRequest;
 import com.synechron.util.JwtUtil;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
+@Api(value = "Swagger2JWTAuthRestController", description = "This REST Api related to Welcome Message!!!!")
 @RestController
 public class JwtAuthenticationController {
     @Autowired
