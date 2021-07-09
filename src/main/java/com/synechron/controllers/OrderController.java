@@ -19,28 +19,12 @@ import java.util.List;
 public class OrderController {
 
     //Logger log = LoggerFactory.getLogger(OrderController.class);
-/*
-    @Autowired
-    private OrderRepository orderRepository;
 
-    @Autowired
-    private UserRepository userRepository;
-
-    @PostMapping("/placeOrder")
-    public User placeOrder(@RequestBody OrderRequest request){
-        return userRepository.save(request.getUser());
-    }
-
-    @GetMapping("/findAllOrders")
-    public List<User> findAllOrders(){
-        return userRepository.findAll();
-    }
-
-    @GetMapping("/getInfo")
+    /*@GetMapping("/getInfo")
     public List<OrderResponse> getJoinInformation(){
         return userRepository.getJoinInformation();
-    }
-*/
+    }*/
+
     @Autowired
     private OrderService orderService;
 
@@ -67,6 +51,7 @@ public class OrderController {
     public Order findOrderById(@PathVariable int id){
         return orderService.getOrderById(id);
     }
+
     @GetMapping("/Orders/{name}")
     public Order findOrderByName(@PathVariable String name){
         return orderService.getOrderByName(name);

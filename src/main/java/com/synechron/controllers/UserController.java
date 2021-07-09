@@ -1,6 +1,8 @@
 package com.synechron.controllers;
 
 import com.synechron.exceptions.RecordNotFoundException;
+import com.synechron.modal.Order;
+import com.synechron.modal.OrderRequest;
 import com.synechron.modal.User;
 import com.synechron.service.UserService;
 import io.swagger.annotations.Api;
@@ -29,5 +31,36 @@ public class UserController {
     @GetMapping("/getUsers")
     public List<User> getUsers() {
         return userService.getUsers();
+    }
+
+    @GetMapping("/User/{id}")
+    public User findUserById(@PathVariable int id){
+        return userService.findByUserId(id);
+    }
+
+    @GetMapping("/Users/{name}")
+    public User findUserByName(@PathVariable String name){
+        return userService.getUserByName(name);
+    }
+
+    @PutMapping("/updateUser")
+    public User updateUser(@RequestBody User user){
+        return userService.updateUser(user);
+    }
+
+    @DeleteMapping("/deleteUser/{id}")
+    public String deleteUser(@PathVariable int id){
+        return userService.deleteUser(id);
+    }
+
+
+    @PostMapping("/placeOrder")
+    public User placeOrder(@RequestBody OrderRequest request){
+        return userService.placeOrder(request.getUser());
+    }
+
+    @GetMapping("/findAllOrders")
+    public List<User> findAllOrders(){
+        return userService.findAllOrders();
     }
 }

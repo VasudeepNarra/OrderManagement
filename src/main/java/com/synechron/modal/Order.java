@@ -16,11 +16,11 @@ import javax.persistence.*;
 @Table(name="ORDERS_TBL")
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer orderId;
     private String orderName;
     private Double orderAmount;
-    //@JsonIgnore
+
     /*
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "userId")
