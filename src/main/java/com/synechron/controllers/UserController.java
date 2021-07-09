@@ -3,6 +3,7 @@ package com.synechron.controllers;
 import com.synechron.exceptions.RecordNotFoundException;
 import com.synechron.modal.Order;
 import com.synechron.modal.OrderRequest;
+import com.synechron.modal.OrderResponse;
 import com.synechron.modal.User;
 import com.synechron.service.UserService;
 import io.swagger.annotations.Api;
@@ -62,5 +63,10 @@ public class UserController {
     @GetMapping("/findAllOrders")
     public List<User> findAllOrders(){
         return userService.findAllOrders();
+    }
+
+    @GetMapping("/getInfo")
+    public List<OrderResponse> getJoinInformation(){
+        return userService.getJoinInformation();
     }
 }

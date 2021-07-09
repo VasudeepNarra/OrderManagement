@@ -20,11 +20,6 @@ public class OrderController {
 
     //Logger log = LoggerFactory.getLogger(OrderController.class);
 
-    /*@GetMapping("/getInfo")
-    public List<OrderResponse> getJoinInformation(){
-        return userRepository.getJoinInformation();
-    }*/
-
     @Autowired
     private OrderService orderService;
 

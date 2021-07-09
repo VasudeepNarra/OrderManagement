@@ -2,6 +2,7 @@ package com.synechron.service;
 
 import com.synechron.modal.Order;
 import com.synechron.modal.OrderRequest;
+import com.synechron.modal.OrderResponse;
 import com.synechron.modal.User;
 import com.synechron.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,5 +71,10 @@ public class UserService implements UserDetailsService{
 
     public List<User> findAllOrders(){
         return repository.findAll();
+    }
+
+    public List<OrderResponse> getJoinInformation(){
+        return repository.getJoinInformation();
+
     }
 }
