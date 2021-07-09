@@ -17,15 +17,18 @@ import java.util.List;
 @Table(name="USERS_TBL")
 public class User {
     @Id
-    @GeneratedValue
+    //@GeneratedValue
     private Integer userId;
     private String userName;
     private String userPassword;
     private String email;
     private String phoneNumber;
-    //@JsonIgnore
-   // @OneToMany(mappedBy = "user", cascade={CascadeType.ALL})
-    @OneToMany(targetEntity = Order.class,cascade = CascadeType.ALL)
-    @JoinColumn(name ="userorder_fk",referencedColumnName = "userId")
-    private List<Order> orders;
+
+    //@OneToMany(targetEntity = Order.class,cascade = CascadeType.ALL)
+    //@JoinColumn(name ="userorder_fk",referencedColumnName = "userId")
+
+    /*
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", cascade={CascadeType.ALL})
+    private List<Order> orders;*/
 }

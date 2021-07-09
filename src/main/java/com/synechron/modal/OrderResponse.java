@@ -14,7 +14,6 @@ import lombok.ToString;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class OrderResponse {
-
     private String userName;
     private String orderName;
 
