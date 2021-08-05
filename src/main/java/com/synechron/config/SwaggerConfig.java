@@ -1,5 +1,6 @@
 package com.synechron.config;
 
+/*
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -42,4 +43,9 @@ public class SwaggerConfig {
     //http://localhost:port-num/swagger2-demo-app/v2/api-docs
     //http://localhost:9090/swagger2-demo-app/swagger-ui.html
 
+}
+*/
+public class SwaggerConfig {
+
+	
 }

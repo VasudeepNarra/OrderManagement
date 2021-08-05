@@ -6,7 +6,7 @@ import com.synechron.modal.OrderRequest;
 import com.synechron.modal.OrderResponse;
 import com.synechron.modal.User;
 import com.synechron.service.UserService;
-import io.swagger.annotations.Api;
+//import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(value = "Swagger2UserRestController", description = "This REST Api related to Welcome Message!!!!")
+//@Api(value = "Swagger2UserRestController", description = "This REST Api related to Welcome Message!!!!")
 @RestController
+@RequestMapping(path = "/api/v1")
 public class UserController {
     @Autowired
     private UserService userService;

@@ -20,8 +20,9 @@ import com.synechron.filter.JwtFilter;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-    @Autowired
+//public class SecurityConfig {
+    
+	@Autowired
     private UserService userDetailsService;
 
     @Autowired

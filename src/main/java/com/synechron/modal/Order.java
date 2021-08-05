@@ -21,11 +21,11 @@ public class Order {
     private String orderName;
     private Double orderAmount;
 
-    /*
+    
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "userId")
     private User user;
     public void addUser(User user) {
         this.user = user;
-    }*/
+    }
 }

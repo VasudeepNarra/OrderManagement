@@ -19,9 +19,11 @@ import java.util.List;
 
 @Service
 public class UserService implements UserDetailsService{
+//public class UserService {
+
     @Autowired
     private UserRepository repository;
-
+    
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = repository.findByUserName(username);
@@ -31,6 +33,7 @@ public class UserService implements UserDetailsService{
         return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getUserPassword(),
                 new ArrayList<>());
     }
+    
     public User addUser(User user) {
         return repository.save(user);
     }
@@ -62,6 +65,7 @@ public class UserService implements UserDetailsService{
         existingUser.setUserPassword(user.getUserPassword());
         existingUser.setEmail(user.getEmail());
         existingUser.setPhoneNumber(user.getPhoneNumber());
+        existingUser.setOrders(user.getOrders());
         return repository.save(existingUser);
     }
 
